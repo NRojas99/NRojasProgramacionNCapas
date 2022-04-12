@@ -1,0 +1,101 @@
+﻿@model ML.Direccion
+
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2> Usuarios</h2>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h5> Selecione el boton de "+" para añadir un nuevo Usuario, el boton amarillo para actualizar un usuario, y el boton rojo para eliminer a un usuario</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p class="text-right">@Html.ActionLink("+", "Form", "Usuario", htmlAttributes: new { @class = "btn btn-success" })</p>
+    </div>
+</div>
+
+    <br />
+    @if (Model.Direcciones.Count > 0)
+     {
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr class="text-center">
+                        <td>Editar</td>
+                        <td class="hidden">IdUsuario</td>
+                        <td>UserName</td>
+                        <td>Password</td>
+                        <td>Nombre</td>
+                        <td>Email</td>
+                        <td>FechaNacimieto</td>
+                        <td>Sexo</td>
+                        <td>Telefono</td>
+                        <td>Celular</td>
+                        <td>Estatus</td>
+                        <td>CURP</td>
+                        <td>ROL</td>
+                        <td>Direccion</td>
+                        <td>Imagen</td>
+                        <td>Eliminar</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (ML.Direccion direccion in Model.Direcciones)
+                    {
+                        <tr class="text-center">
+                            <td><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Usuario", new { IdUsuario = direccion.Usuario.IdUsuario})"></a></td>
+                            <td class="hidden">@direccion.Usuario.IdUsuario </td>
+                            <td>@direccion.Usuario.UserName</td>
+                            <td>@direccion.Usuario.Password</td>
+                            <td>@direccion.Usuario.Nombre @direccion.Usuario.ApellidoPaterno @direccion.Usuario.ApellidoMaterno</td>
+                            <td>@direccion.Usuario.Email</td>
+                            <td>@direccion.Usuario.FechaNacimiento</td>
+                            <td>@direccion.Usuario.Sexo</td>
+                            <td>@direccion.Usuario.Telefono</td>
+                            <td>@direccion.Usuario.Celular</td>
+                            <td>@direccion.Usuario.Estatus</td>
+                            <td>@direccion.Usuario.CURP</td>
+                            <td class="hidden">@direccion.Usuario.Rol.IdRol</td>
+                            <td>@direccion.Usuario.Rol.Nombre</td>
+                            <td class="hidden">@direccion.IdDireccion</td>
+                            <td>@direccion.Calle @direccion.NumeroExterior @direccion.NumeroInterior @direccion.Colonia.Nombre</td>
+                            @if (direccion.Usuario.Imagen != null)
+                            {
+                                <td><img src="data:image/jpeg;base64,@Convert.ToBase64String(direccion.Usuario.Imagen)" style=" height:100px; width:100px;" /></td>
+                            }
+                            else
+                            {
+                                <td> <img src="~/Img/sinimagen.png" style="height:150px; width:150px;" /></td>
+                            }
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Usuario", new { IdUsuario = direccion.Usuario.IdUsuario })" onclick="return confirm('Estas seguro que deseas eliminer este registro?')"></a></td>
+                        </tr>
+                    }
+                </tbody>
+             </table>
+        </div>
+    </div>
+     }
+    else
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    No se encontraron registros sobre Alumnos
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

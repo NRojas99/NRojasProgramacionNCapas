@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Operaciones" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:32695/Operaciones.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:32695/Operaciones.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOperaciones_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Saludar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Saludar" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Saludar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaludarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Suma_InputMessage">
+    <wsdl:part name="parameters" element="tns:Suma" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Suma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SumaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Resta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Resta" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Resta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Multiplicación_InputMessage">
+    <wsdl:part name="parameters" element="tns:Multiplicación" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_Multiplicación_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplicaciónResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_División_InputMessage">
+    <wsdl:part name="parameters" element="tns:División" />
+  </wsdl:message>
+  <wsdl:message name="IOperaciones_División_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivisiónResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOperaciones">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/DoWork" message="tns:IOperaciones_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/DoWorkResponse" message="tns:IOperaciones_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/Saludar" message="tns:IOperaciones_Saludar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/SaludarResponse" message="tns:IOperaciones_Saludar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Suma">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/Suma" message="tns:IOperaciones_Suma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/SumaResponse" message="tns:IOperaciones_Suma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/Resta" message="tns:IOperaciones_Resta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/RestaResponse" message="tns:IOperaciones_Resta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicación">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/Multiplicación" message="tns:IOperaciones_Multiplicación_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/MultiplicaciónResponse" message="tns:IOperaciones_Multiplicación_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="División">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperaciones/División" message="tns:IOperaciones_División_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperaciones/DivisiónResponse" message="tns:IOperaciones_División_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOperaciones" type="tns:IOperaciones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/Saludar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Suma">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/Suma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/Resta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicación">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/Multiplicación" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="División">
+      <soap:operation soapAction="http://tempuri.org/IOperaciones/División" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Operaciones">
+    <wsdl:port name="BasicHttpBinding_IOperaciones" binding="tns:BasicHttpBinding_IOperaciones">
+      <soap:address location="http://localhost:32695/Operaciones.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

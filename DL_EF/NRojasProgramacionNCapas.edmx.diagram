@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c60e52dcef33444e802bb93dcf7151a7" Name="Diagram1">
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Area" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Colonia" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Departamento" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Direccion" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Estado" Width="1.5" PointX="1.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.MetodoPago" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Municipio" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Pai" Width="1.5" PointX="1.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Producto" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Proveedor" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Rol" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Usuario" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.Venta" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NRojasProgramacionNCapasModel1.VentaProducto" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Departame__IdAre__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Colonia__IdMunic__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Direccion__IdCol__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Producto__IdDepa__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Direccion__IdUsu__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Estado__IdPais__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Municipio__IdEst__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Venta__IdMetodoP__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Producto__IdProv__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__VentaProd__IdPro__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Usuario__IdRol__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__Venta__IdUsuario__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="NRojasProgramacionNCapasModel1.FK__VentaProd__IdVen__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
